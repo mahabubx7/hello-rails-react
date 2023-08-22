@@ -1,11 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { Application } from "@hotwired/stimulus"
 
-function App() {
-  return (<h1>Hello World!</h1>);
-}
+const application = Application.start()
 
-ReactDOM.render(
-  <App/>,
-  document.getElementById('root'),
-);
+// Configure Stimulus development experience
+application.debug = false
+window.Stimulus   = application
+
+export { application }
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+
+// function App() {
+//   return (<h1>Hello World!</h1>);
+// }
+
+// ReactDOM.render(
+//   <App/>,
+//   document.getElementById('root'),
+// );
