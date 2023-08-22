@@ -6,24 +6,23 @@
 #
 default: &default
   adapter: postgresql
-  host: <%= ENV["DB_HOST"] %>
-  username: <%= ENV["DB_USER"] %>
-  password: <%= ENV["DB_PASS"] %>
-  port: <%= ENV["DB_PORT"] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
-  database: ror_hello_dev
+  database: hello_ror_react_dev
+  url: <%= ENV["DATABASE_URL"] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ror_hello_test
+  database: hello_ror_react_test
+  url: <%= ENV["DATABASE_URL"] %>
 
 production:
   <<: *default
-  database: ror_hello_prod
+  database: hello_ror_react_prod
+  url: <%= ENV["DATABASE_URL"] %>
