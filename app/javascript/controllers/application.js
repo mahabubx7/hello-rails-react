@@ -1,9 +1,11 @@
-import { Application } from "@hotwired/stimulus"
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const application = Application.start()
+function App() {
+  return (<h1>Hello World!</h1>);
+}
 
-// Configure Stimulus development experience
-application.debug = false
-window.Stimulus   = application
-
-export { application }
+ReactDOM.render(
+  <App/>,
+  document.getElementById('root'),
+);
