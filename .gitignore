@@ -38,3 +38,10 @@
 !/app/assets/builds/.keep
 
 /node_modules
+
+# env files
+.env
+.env.*
+*.env
+!.env.sample
+!.env.example
